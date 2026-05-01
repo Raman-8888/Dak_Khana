@@ -153,13 +153,17 @@
 @media (max-width: 960px) {
   .hero {
     min-height: auto;
-    padding: 90px 24px 40px;
+    padding: 80px 24px 16px;
+  }
+
+  .hero__deco-lines {
+    display: none;
   }
 
   .hero__container {
     flex-direction: column;
     text-align: center;
-    gap: 32px;
+    gap: 24px;
   }
 
   .hero__content {
@@ -175,11 +179,11 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding: 80px 16px 32px;
+    padding: 72px 16px 12px;
   }
 
   .hero__container {
-    gap: 24px;
+    gap: 20px;
   }
 
   .hero__headline {
@@ -193,14 +197,14 @@
 
 @media (max-width: 480px) {
   .hero {
-    padding: 72px 14px 24px;
+    padding: 68px 14px 8px;
   }
 
   .hero__container {
-    gap: 20px;
+    gap: 16px;
   }
 
   .hero__player {
-    max-width: 280px;
+    max-width: 260px;
   }
 }

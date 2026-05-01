@@ -98,6 +98,12 @@
   line-height: 1.65;
 }
 
+@media (max-width: 960px) {
+  .features {
+    padding: 60px 24px;
+  }
+}
+
 @media (max-width: 900px) {
   .features__grid {
     grid-template-columns: repeat(2, 1fr);
@@ -106,7 +112,7 @@
 
 @media (max-width: 600px) {
   .features {
-    padding: 80px 20px;
+    padding: 40px 16px;
   }
 
   .features__grid {
@@ -116,5 +122,9 @@
 
   .features__card {
     padding: 28px 24px;
+  }
+
+  .features__header {
+    margin-bottom: 40px;
   }
 }
