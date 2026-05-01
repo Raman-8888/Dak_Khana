@@ -9,8 +9,8 @@ const ALL_VIDEOS = ALL_VIDEO_URLS;
 // Map of filename-substring → max play duration (seconds).
 // Only these specific videos get cut short; all others play to the end.
 const VIDEO_TIME_LIMITS = {
-  '3.mp4': 3,
-  '4.mp4': 4,
+  '/3.mp4': 3,
+  '/4.mp4': 4,
 };
 
 /** Return the time limit for a src URL, or null if none. */
