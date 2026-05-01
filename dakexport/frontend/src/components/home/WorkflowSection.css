@@ -1,6 +1,6 @@
 .workflow {
   padding: 120px 32px;
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 
@@ -22,7 +22,7 @@
   border-radius: 100px;
   background: rgba(69, 219, 112, 0.08);
   border: 1px solid rgba(69, 219, 112, 0.15);
-  font-size: 0.78rem;
+  font-size: 0.94rem;
   font-weight: 600;
   color: #45DB70;
   letter-spacing: 0.08em;
@@ -32,7 +32,7 @@
 
 .workflow__title {
   font-family: 'Outfit', sans-serif;
-  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-size: clamp(2.4rem, 4.2vw, 3.36rem);
   font-weight: 700;
   color: #2F2F2F;
   letter-spacing: -0.02em;
@@ -41,7 +41,7 @@
 }
 
 .workflow__sub {
-  font-size: 1.02rem;
+  font-size: 1.22rem;
   color: #2F2F2F;
   opacity: 0.55;
   line-height: 1.7;
@@ -96,7 +96,7 @@
 
 .workflow__step-num {
   font-family: 'Outfit', sans-serif;
-  font-size: 0.72rem;
+  font-size: 0.86rem;
   font-weight: 700;
   color: #45DB70;
   transition: color 0.3s;
@@ -112,14 +112,14 @@
 
 .workflow__step-title {
   font-family: 'Outfit', sans-serif;
-  font-size: 1.15rem;
+  font-size: 1.38rem;
   font-weight: 650;
   color: #2F2F2F;
   margin-bottom: 8px;
 }
 
 .workflow__step-desc {
-  font-size: 0.9rem;
+  font-size: 1.08rem;
   color: #2F2F2F;
   opacity: 0.55;
   line-height: 1.65;

@@ -1,6 +1,6 @@
 .features {
   padding: 120px 32px;
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 
@@ -15,7 +15,7 @@
   border-radius: 100px;
   background: rgba(69, 219, 112, 0.08);
   border: 1px solid rgba(69, 219, 112, 0.15);
-  font-size: 0.78rem;
+  font-size: 0.94rem;
   font-weight: 600;
   color: #45DB70;
   letter-spacing: 0.08em;
@@ -25,7 +25,7 @@
 
 .features__title {
   font-family: 'Outfit', sans-serif;
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(2.4rem, 4.8vw, 3.6rem);
   font-weight: 700;
   color: #2F2F2F;
   letter-spacing: -0.02em;
@@ -33,7 +33,7 @@
 }
 
 .features__sub {
-  font-size: 1.05rem;
+  font-size: 1.26rem;
   color: #2F2F2F;
   opacity: 0.55;
   max-width: 480px;
@@ -85,14 +85,14 @@
 
 .features__card-title {
   font-family: 'Outfit', sans-serif;
-  font-size: 1.15rem;
+  font-size: 1.38rem;
   font-weight: 650;
   color: #2F2F2F;
   margin-bottom: 10px;
 }
 
 .features__card-desc {
-  font-size: 0.9rem;
+  font-size: 1.08rem;
   color: #2F2F2F;
   opacity: 0.55;
   line-height: 1.65;
