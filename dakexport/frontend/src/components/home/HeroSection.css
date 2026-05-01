@@ -151,26 +151,35 @@
 
 /* ─── Responsive ─── */
 @media (max-width: 960px) {
+  .hero {
+    min-height: auto;
+    padding: 90px 24px 40px;
+  }
+
   .hero__container {
     flex-direction: column;
     text-align: center;
+    gap: 32px;
   }
 
   .hero__content {
     align-items: center;
-    max-width: 480px;
+    max-width: 520px;
   }
 
   .hero__player {
-    max-width: 408px;
+    max-width: 400px;
     width: 100%;
   }
 }
 
 @media (max-width: 768px) {
   .hero {
-    padding: 100px 20px 40px;
-    min-height: auto;
+    padding: 80px 16px 32px;
+  }
+
+  .hero__container {
+    gap: 24px;
   }
 
   .hero__headline {
@@ -178,6 +187,20 @@
   }
 
   .hero__player {
-    max-width: 336px;
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 72px 14px 24px;
+  }
+
+  .hero__container {
+    gap: 20px;
+  }
+
+  .hero__player {
+    max-width: 280px;
   }
 }
