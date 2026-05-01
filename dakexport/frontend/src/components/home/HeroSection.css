@@ -44,30 +44,29 @@
 .hero__container {
   position: relative;
   z-index: 10;
-  max-width: 1200px;
+  max-width: 1340px;
   width: 100%;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 40px;
 }
 
 .hero__content {
-  flex: 0 1 480px;
+  flex: 0 1 520px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 20px;
+  gap: 24px;
 }
 
-/* Font sizes reduced by 30%, JetBrains Mono */
 .hero__headline {
   font-family: 'JetBrains Mono', monospace;
-  font-size: clamp(2.16rem, 4.24vw, 3.47rem);
+  font-size: clamp(2.6rem, 5.2vw, 4.5rem);
   font-weight: 800;
   color: #2F2F2F;
-  line-height: 1.12;
+  line-height: 1.1;
   letter-spacing: -0.03em;
 }
 
@@ -78,7 +77,7 @@
 
 .hero__sub {
   font-family: 'JetBrains Mono', monospace;
-  font-size: clamp(0.77rem, 1.23vw, 0.89rem);
+  font-size: clamp(0.88rem, 1.4vw, 1.05rem);
   color: #888;
   line-height: 1.7;
   font-weight: 400;
@@ -97,9 +96,9 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 12px 28px;
+  padding: 14px 32px;
   border-radius: 8px;
-  font-size: 0.77rem;
+  font-size: 0.88rem;
   font-weight: 600;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
@@ -119,7 +118,7 @@
 
 /* ─── Video Player ─── */
 .hero__player {
-  flex: 0 1 546px;
+  flex: 0 1 620px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,7 +127,7 @@
 .hero__player-frame {
   position: relative;
   width: 100%;
-  max-width: 506px;
+  max-width: 580px;
   aspect-ratio: 1 / 1;
   overflow: hidden;
   border-radius: 12px;
@@ -163,7 +162,7 @@
   }
 
   .hero__player {
-    max-width: 280px;
+    max-width: 340px;
     width: 100%;
   }
 }
@@ -175,10 +174,10 @@
   }
 
   .hero__headline {
-    font-size: clamp(1.4rem, 5.6vw, 2.1rem);
+    font-size: clamp(1.8rem, 7vw, 2.6rem);
   }
 
   .hero__player {
-    max-width: 224px;
+    max-width: 280px;
   }
 }
