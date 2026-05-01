@@ -5,6 +5,17 @@
   background: #ffffff;
 }
 
+.homepage--hidden {
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.homepage--visible {
+  opacity: 1;
+  transition: opacity 0.1s ease-out;
+}
+
 main {
   position: relative;
   z-index: 1;

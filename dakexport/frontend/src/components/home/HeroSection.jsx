@@ -1,15 +1,10 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
+import { ALL_VIDEO_URLS } from './LoadingScreen';
 import './HeroSection.css';
 
-// Eagerly import all videos from assets/videos/
-const videoModules = import.meta.glob('../../assets/videos/*.mp4', {
-  eager: true,
-  query: '?url',
-  import: 'default',
-});
-const ALL_VIDEOS = Object.values(videoModules);
+const ALL_VIDEOS = ALL_VIDEO_URLS;
 
 // Map of filename-substring → max play duration (seconds).
 // Only these specific videos get cut short; all others play to the end.
