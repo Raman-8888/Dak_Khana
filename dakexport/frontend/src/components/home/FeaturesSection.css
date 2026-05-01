@@ -1,0 +1,120 @@
+.features {
+  padding: 120px 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.features__header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+
+.features__label {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 100px;
+  background: rgba(69, 219, 112, 0.08);
+  border: 1px solid rgba(69, 219, 112, 0.15);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #45DB70;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.features__title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #2F2F2F;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.features__sub {
+  font-size: 1.05rem;
+  color: #2F2F2F;
+  opacity: 0.55;
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.features__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.features__card {
+  padding: 36px 32px;
+  border-radius: 20px;
+  background: rgba(254, 255, 254, 0.85);
+  border: 1px solid rgba(164, 213, 183, 0.15);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0;
+}
+
+.features__card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(69, 219, 112, 0.3);
+  box-shadow: 0 12px 40px rgba(69, 219, 112, 0.1),
+              0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.features__card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(69, 219, 112, 0.06);
+  border: 1px solid rgba(69, 219, 112, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: all 0.3s;
+}
+
+.features__card:hover .features__card-icon {
+  background: rgba(69, 219, 112, 0.12);
+  transform: scale(1.05);
+}
+
+.features__card-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 650;
+  color: #2F2F2F;
+  margin-bottom: 10px;
+}
+
+.features__card-desc {
+  font-size: 0.9rem;
+  color: #2F2F2F;
+  opacity: 0.55;
+  line-height: 1.65;
+}
+
+@media (max-width: 900px) {
+  .features__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .features {
+    padding: 80px 20px;
+  }
+
+  .features__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .features__card {
+    padding: 28px 24px;
+  }
+}

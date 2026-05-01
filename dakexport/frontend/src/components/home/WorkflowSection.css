@@ -1,0 +1,146 @@
+.workflow {
+  padding: 120px 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.workflow__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.workflow__header {
+  position: sticky;
+  top: 120px;
+}
+
+.workflow__label {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 100px;
+  background: rgba(69, 219, 112, 0.08);
+  border: 1px solid rgba(69, 219, 112, 0.15);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #45DB70;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.workflow__title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  color: #2F2F2F;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+  line-height: 1.1;
+}
+
+.workflow__sub {
+  font-size: 1.02rem;
+  color: #2F2F2F;
+  opacity: 0.55;
+  line-height: 1.7;
+  max-width: 400px;
+}
+
+.workflow__steps {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-left: 40px;
+}
+
+.workflow__line {
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, #45DB70 0%, rgba(69, 219, 112, 0.1) 100%);
+  border-radius: 2px;
+}
+
+.workflow__step {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  opacity: 0;
+}
+
+.workflow__step-marker {
+  position: relative;
+  left: -40px;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #FEFFFE;
+  border: 2px solid #45DB70;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 6px rgba(69, 219, 112, 0.08);
+  transition: all 0.3s;
+}
+
+.workflow__step:hover .workflow__step-marker {
+  background: #45DB70;
+  box-shadow: 0 0 0 8px rgba(69, 219, 112, 0.15);
+}
+
+.workflow__step-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #45DB70;
+  transition: color 0.3s;
+}
+
+.workflow__step:hover .workflow__step-num {
+  color: #FEFFFE;
+}
+
+.workflow__step-content {
+  padding-top: 2px;
+}
+
+.workflow__step-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 650;
+  color: #2F2F2F;
+  margin-bottom: 8px;
+}
+
+.workflow__step-desc {
+  font-size: 0.9rem;
+  color: #2F2F2F;
+  opacity: 0.55;
+  line-height: 1.65;
+}
+
+@media (max-width: 768px) {
+  .workflow {
+    padding: 80px 20px;
+  }
+
+  .workflow__inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .workflow__header {
+    position: static;
+    text-align: center;
+  }
+
+  .workflow__sub {
+    margin: 0 auto;
+  }
+}

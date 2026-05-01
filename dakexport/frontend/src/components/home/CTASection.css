@@ -1,0 +1,128 @@
+.cta-section {
+  padding: 80px 32px 120px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cta-section__card {
+  position: relative;
+  padding: 80px 60px;
+  border-radius: 32px;
+  background: #2F2F2F;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.cta-section__glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+.cta-section__glow--1 {
+  width: 400px;
+  height: 400px;
+  background: rgba(69, 219, 112, 0.2);
+  top: -150px;
+  right: -100px;
+}
+
+.cta-section__glow--2 {
+  width: 300px;
+  height: 300px;
+  background: rgba(188, 255, 208, 0.1);
+  bottom: -100px;
+  left: -80px;
+}
+
+.cta-section__content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.cta-section__title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  color: #FEFFFE;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.cta-section__sub {
+  font-size: 1.02rem;
+  color: rgba(254, 255, 254, 0.55);
+  max-width: 480px;
+  line-height: 1.7;
+}
+
+.cta-section__actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cta-section__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border-radius: 100px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cta-section__btn--primary {
+  background: #45DB70;
+  color: #FEFFFE;
+  box-shadow: 0 4px 24px rgba(69, 219, 112, 0.3);
+}
+
+.cta-section__btn--primary:hover {
+  background: #BCFFD0;
+  color: #2F2F2F;
+  box-shadow: 0 8px 32px rgba(69, 219, 112, 0.4);
+  transform: translateY(-2px);
+}
+
+.cta-section__btn--ghost {
+  background: transparent;
+  color: rgba(254, 255, 254, 0.7);
+  border: 1.5px solid rgba(254, 255, 254, 0.15);
+}
+
+.cta-section__btn--ghost:hover {
+  border-color: rgba(254, 255, 254, 0.4);
+  color: #FEFFFE;
+  background: rgba(254, 255, 254, 0.05);
+}
+
+@media (max-width: 768px) {
+  .cta-section {
+    padding: 60px 20px 80px;
+  }
+
+  .cta-section__card {
+    padding: 48px 28px;
+    border-radius: 24px;
+  }
+
+  .cta-section__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cta-section__btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

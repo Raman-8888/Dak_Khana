@@ -1,0 +1,11 @@
+.homepage {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
