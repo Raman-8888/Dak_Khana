@@ -1,0 +1,507 @@
+/* ── Agent Dashboard — Full Dark UI ────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+* { box-sizing: border-box; }
+
+.agent-dash {
+    min-height: 100vh;
+    background: #080e1a;
+    font-family: 'Inter', sans-serif;
+    color: #e2e8f0;
+}
+
+/* ── Topbar ──────────────────────────────────────────────────────────────── */
+.agent-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    height: 64px;
+    background: rgba(15, 23, 42, 0.95);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+}
+
+.agent-topbar__left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.agent-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 800;
+    font-size: 1rem;
+    color: #f1f5f9;
+    letter-spacing: -0.3px;
+}
+
+.agent-greeting {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.78rem;
+    line-height: 1.3;
+    border-left: 1px solid rgba(255,255,255,0.1);
+    padding-left: 20px;
+}
+
+.agent-greeting span { color: #64748b; }
+.agent-greeting strong { color: #f1f5f9; font-size: 0.9rem; }
+
+.agent-topbar__right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Shift toggle */
+.shift-toggle {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 14px;
+    border-radius: 20px;
+    border: none;
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.2s;
+}
+
+.shift-toggle--on {
+    background: rgba(69, 219, 112, 0.15);
+    color: #45DB70;
+    border: 1px solid rgba(69, 219, 112, 0.3);
+}
+
+.shift-toggle--off {
+    background: rgba(100, 116, 139, 0.15);
+    color: #94a3b8;
+    border: 1px solid rgba(100, 116, 139, 0.2);
+}
+
+.shift-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #45DB70;
+    animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.6; transform: scale(0.85); }
+}
+
+/* Icon button */
+.agent-icon-btn {
+    position: relative;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.agent-icon-btn:hover {
+    background: rgba(255,255,255,0.08);
+    color: #e2e8f0;
+}
+
+.agent-icon-btn__badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #ef4444;
+    color: #fff;
+    font-size: 0.6rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Avatar */
+.agent-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #45DB70, #2ECC5E);
+    color: #0f172a;
+    font-weight: 800;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+}
+
+/* ── Main ──────────────────────────────────────────────────────────────────── */
+.agent-main {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* ── Earnings Banner ─────────────────────────────────────────────────────── */
+.agent-earnings-banner {
+    position: relative;
+    background: linear-gradient(135deg, #0d4f28 0%, #0a3d1e 100%);
+    border: 1px solid rgba(69, 219, 112, 0.2);
+    border-radius: 20px;
+    padding: 28px 32px;
+    overflow: hidden;
+}
+
+.agent-earnings-banner__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+}
+
+.agent-earnings-label {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.6);
+    margin: 0 0 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.agent-earnings-amount {
+    font-size: 2.6rem;
+    font-weight: 900;
+    color: #45DB70;
+    margin: 0;
+    letter-spacing: -1px;
+}
+
+.agent-earnings-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: right;
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.6);
+}
+
+.agent-earnings-streak {
+    font-size: 0.82rem;
+}
+
+.agent-earnings-bg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    opacity: 0.5;
+}
+
+/* ── Stats Row ───────────────────────────────────────────────────────────── */
+.agent-stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.agent-stat-card {
+    background: #1e293b;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.agent-stat-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255,255,255,0.12);
+}
+
+.agent-stat-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.agent-stat-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.agent-stat-value {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #f1f5f9;
+    line-height: 1;
+    letter-spacing: -0.5px;
+}
+
+.agent-stat-label {
+    font-size: 0.78rem;
+    color: #64748b;
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+.agent-stat-sub {
+    font-size: 0.72rem;
+    color: #475569;
+    margin-top: 2px;
+}
+
+/* ── Content Grid ────────────────────────────────────────────────────────── */
+.agent-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* ── Section ─────────────────────────────────────────────────────────────── */
+.agent-section {
+    background: #1e293b;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 20px;
+    padding: 24px;
+}
+
+.agent-section__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.agent-section__header h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin: 0;
+}
+
+.agent-view-all {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #45DB70;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    padding: 0;
+    transition: opacity 0.2s;
+}
+
+.agent-view-all:hover { opacity: 0.75; }
+
+/* ── Assignment Cards ────────────────────────────────────────────────────── */
+.assign-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.assign-card {
+    background: #0f172a;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px;
+    padding: 16px;
+    transition: border-color 0.2s;
+}
+
+.assign-card--urgent {
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+.assign-card:hover {
+    border-color: rgba(255,255,255,0.12);
+}
+
+.assign-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.assign-card__id {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #64748b;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.assign-card__status {
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    text-transform: capitalize;
+}
+
+.assign-card__address {
+    font-size: 0.88rem;
+    color: #cbd5e1;
+    margin: 0 0 10px;
+    line-height: 1.4;
+}
+
+.assign-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.assign-card__time {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.78rem;
+    color: #64748b;
+}
+
+.assign-card__urgent {
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+}
+
+/* ── Map Section ─────────────────────────────────────────────────────────── */
+.agent-map-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.agent-map-placeholder {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    background: #0f172a;
+    border-radius: 12px;
+    border: 1px dashed rgba(69, 219, 112, 0.2);
+    gap: 12px;
+    color: #475569;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 24px;
+}
+
+.agent-map-coming {
+    font-size: 0.75rem;
+    color: #334155;
+}
+
+/* ── Quick Actions ───────────────────────────────────────────────────────── */
+.agent-quick-actions {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.qa-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 20px;
+    background: #1e293b;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    color: #94a3b8;
+    font-size: 0.88rem;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.qa-btn:hover {
+    background: #243044;
+    border-color: rgba(255,255,255,0.15);
+    color: #e2e8f0;
+    transform: translateY(-1px);
+}
+
+.qa-btn--green {
+    background: rgba(69, 219, 112, 0.12);
+    border-color: rgba(69, 219, 112, 0.25);
+    color: #45DB70;
+}
+
+.qa-btn--green:hover {
+    background: rgba(69, 219, 112, 0.2);
+}
+
+.qa-btn--red {
+    background: rgba(239, 68, 68, 0.08);
+    border-color: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+}
+
+.qa-btn--red:hover {
+    background: rgba(239, 68, 68, 0.15);
+}
+
+/* ── Route Spinner (ProtectedRoute loading) ──────────────────────────────── */
+.route-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(69, 219, 112, 0.15);
+    border-top-color: #45DB70;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+    .agent-stats-row { grid-template-columns: repeat(2, 1fr); }
+    .agent-content-grid { grid-template-columns: 1fr; }
+    .agent-quick-actions { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+    .agent-main { padding: 16px; }
+    .agent-stats-row { grid-template-columns: repeat(2, 1fr); }
+    .agent-quick-actions { grid-template-columns: repeat(2, 1fr); }
+    .agent-earnings-banner { padding: 20px; }
+    .agent-earnings-amount { font-size: 2rem; }
+    .agent-greeting { display: none; }
+}

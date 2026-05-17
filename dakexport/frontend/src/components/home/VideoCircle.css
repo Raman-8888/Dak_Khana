@@ -1,0 +1,46 @@
+.video-circle {
+  position: absolute;
+  pointer-events: none;
+  will-change: transform;
+  transform: translateZ(0);
+  contain: layout style paint;
+}
+
+.video-circle__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  transform: translateZ(0);
+  box-shadow: 0 8px 40px rgba(69, 219, 112, 0.12),
+              0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.video-circle__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  will-change: opacity;
+  transform: translateZ(0);
+}
+
+.video-circle__border {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(69, 219, 112, 0.15);
+  z-index: 3;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .video-circle__inner {
+    box-shadow: 0 4px 20px rgba(69, 219, 112, 0.1),
+                0 1px 6px rgba(0, 0, 0, 0.04);
+  }
+}

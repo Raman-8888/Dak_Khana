@@ -1,0 +1,22 @@
+# OS junk
+.DS_Store
+Thumbs.db
+*.swp
+
+# IDEs
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Dependencies (fallback)
+node_modules/
+vendor/
+
+# Local configuration
+project_details.json

@@ -1,0 +1,108 @@
+.unauth-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #0f172a;
+    padding: 24px;
+    font-family: 'Inter', sans-serif;
+}
+
+.unauth-card {
+    background: #1e293b;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 24px;
+    padding: 56px 48px;
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+}
+
+.unauth-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(239, 68, 68, 0.12);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    color: #ef4444;
+}
+
+.unauth-code {
+    font-size: 5rem;
+    font-weight: 900;
+    color: rgba(255,255,255,0.06);
+    margin: 0;
+    line-height: 1;
+    letter-spacing: -4px;
+}
+
+.unauth-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #f1f5f9;
+    margin: 8px 0 16px;
+    letter-spacing: -0.5px;
+}
+
+.unauth-desc {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    margin: 0 0 36px;
+}
+
+.unauth-role-badge {
+    display: inline-block;
+    padding: 2px 10px;
+    background: rgba(69, 219, 112, 0.12);
+    border: 1px solid rgba(69, 219, 112, 0.3);
+    border-radius: 20px;
+    color: #45DB70;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.unauth-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.unauth-btn {
+    padding: 13px 24px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: 'Inter', sans-serif;
+    border: none;
+}
+
+.unauth-btn--primary {
+    background: #45DB70;
+    color: #0f172a;
+}
+
+.unauth-btn--primary:hover {
+    background: #3cc865;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(69, 219, 112, 0.35);
+}
+
+.unauth-btn--ghost {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.12);
+    color: #94a3b8;
+}
+
+.unauth-btn--ghost:hover {
+    border-color: rgba(255,255,255,0.25);
+    color: #e2e8f0;
+}

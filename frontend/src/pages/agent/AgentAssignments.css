@@ -1,0 +1,117 @@
+.agent-assign-page {
+    min-height: 100vh;
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 24px;
+    font-family: Inter, system-ui, sans-serif;
+}
+
+.agent-assign-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.agent-assign-top h1 {
+    margin: 0;
+    font-size: 1.35rem;
+    flex: 1;
+    text-align: center;
+}
+
+.agent-assign-back,
+.agent-assign-logout {
+    color: #94a3b8;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.agent-assign-back:hover,
+.agent-assign-logout:hover {
+    color: #45db70;
+}
+
+.agent-assign-muted {
+    color: #64748b;
+}
+
+.agent-assign-error {
+    color: #f87171;
+}
+
+.agent-assign-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.agent-assign-card {
+    background: #1e293b;
+    border-radius: 12px;
+    padding: 16px 18px;
+    border: 1px solid #334155;
+}
+
+.agent-assign-card__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.agent-assign-tn {
+    font-weight: 600;
+    color: #45db70;
+}
+
+.agent-assign-status {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #94a3b8;
+}
+
+.agent-assign-addr {
+    margin: 0 0 14px;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    color: #cbd5e1;
+}
+
+.agent-assign-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.agent-assign-actions button {
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid #475569;
+    background: #0f172a;
+    color: #e2e8f0;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.agent-assign-actions button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.agent-assign-actions button.danger {
+    border-color: #7f1d1d;
+    color: #fecaca;
+}
+
+.agent-assign-actions button:not(:disabled):hover {
+    border-color: #45db70;
+    color: #45db70;
+}
