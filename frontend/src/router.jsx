@@ -18,10 +18,11 @@ import BillingPage       from './pages/customer/BillingPage';
 import SupportPage       from './pages/customer/SupportPage';
 
 // ── Delivery Agent ────────────────────────────────────────────────────────────
-import AgentDashboard from './pages/agent/AgentDashboard';
-import AgentAssignments from './pages/agent/AgentAssignments';
-import AgentEarnings from './pages/agent/AgentEarnings';
-import AgentHistory from './pages/agent/AgentHistory';
+import AgentDashboard    from './pages/agent/AgentDashboard';
+import AgentAssignments  from './pages/agent/AgentAssignments';
+import AgentEarnings     from './pages/agent/AgentEarnings';
+import AgentHistory      from './pages/agent/AgentHistory';
+import AgentSupportPage  from './pages/agent/AgentSupportPage';
 
 // ── Admin ─────────────────────────────────────────────────────────────────────
 import AdminDashboard from './pages/admin/Dashboard';
@@ -117,6 +118,7 @@ export const router = createBrowserRouter([
             { path: 'shift',       element: <AgentGuard><ComingSoon title="Shift Management" /></AgentGuard> },
             { path: 'earnings',    element: <AgentGuard><AgentEarnings /></AgentGuard> },
             { path: 'history',     element: <AgentGuard><AgentHistory /></AgentGuard> },
+            { path: 'support',     element: <AgentGuard><AgentSupportPage /></AgentGuard> },
         ],
     },
 

@@ -110,6 +110,7 @@ export default function Navbar() {
                 <Link to="/agent/dashboard" className="navbar__link">Dashboard</Link>
                 <Link to="/agent/earnings" className="navbar__link">Earnings</Link>
                 <Link to="/agent/history" className="navbar__link">History</Link>
+                <Link to="/agent/support" className="navbar__link">Support</Link>
               </>
           )}
         </div>
@@ -305,7 +306,12 @@ export default function Navbar() {
               <Link to="/customer/dashboard" className="navbar__mobile-link" onClick={() => setMobileOpen(false)}>Dashboard</Link>
             )}
             {rawRole === 'delivery_agent' && (
-              <Link to="/agent/dashboard" className="navbar__mobile-link" onClick={() => setMobileOpen(false)}>Dashboard</Link>
+              <>
+                <Link to="/agent/dashboard" className="navbar__mobile-link" onClick={() => setMobileOpen(false)}>Dashboard</Link>
+                <Link to="/agent/earnings" className="navbar__mobile-link" onClick={() => setMobileOpen(false)}>Earnings</Link>
+                <Link to="/agent/history" className="navbar__mobile-link" onClick={() => setMobileOpen(false)}>History</Link>
+                <Link to="/agent/support" className="navbar__mobile-link" onClick={() => setMobileOpen(false)}>Support</Link>
+              </>
             )}
             <button className="navbar__mobile-link" style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#dc2626' }} onClick={handleLogout}>Sign Out</button>
           </>

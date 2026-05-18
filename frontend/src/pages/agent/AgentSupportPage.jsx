@@ -1,24 +1,25 @@
 import { useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../../store/authStore';
 import Navbar from '../../components/layout/Navbar';
-import DashboardSidebar from '../../components/dashboard/DashboardSidebar';
-import '../customer/CustomerDashboard.css';
+import './AgentDashboard.css';
 
 const SHEET_URL = import.meta.env.VITE_SUPPORT_SHEET_URL;
 
-export default function SupportPage() {
+export default function AgentSupportPage() {
     const navigate = useNavigate();
-    const location = useLocation();
     const { user, logout } = useAuthStore();
 
-    const [sidebarOpen, setSidebarOpen] = useState(true);
-    const [form, setForm] = useState({ name: user?.name || '', mobile_no: '', email: user?.email || '', message: '' });
+    const [form, setForm] = useState({
+        name: user?.name || '',
+        mobile_no: '',
+        email: user?.email || '',
+        message: '',
+    });
     const [status, setStatus] = useState('idle'); // idle | sending | success | error
 
-    const firstName = user?.name?.split(' ')[0] ?? 'there';
-
-    const handleChange = (field, value) => setForm(prev => ({ ...prev, [field]: value }));
+    const handleChange = (field, value) =>
+        setForm(prev => ({ ...prev, [field]: value }));
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -50,34 +51,52 @@ export default function SupportPage() {
     };
 
     return (
-        <div className={`cust-layout ${sidebarOpen ? '' : 'sidebar-collapsed'}`}>
+        <>
             <Navbar />
-            <DashboardSidebar
-                currentPath={location.pathname}
-                onCreateShipment={() => navigate('/customer/my-shipments')}
-                onLogout={async () => { await logout(); navigate('/login'); }}
-            />
-            <div className="cust-main">
-                <div className="cust-content" style={{ display: 'flex', flexDirection: 'column' }}>
-                    <section className="cust-section" style={{ width: '100%', maxWidth: '640px', margin: '0 auto' }}>
-                        <div className="cust-section__header">
-                            <h2 className="cust-section__title">💬 Customer Support</h2>
+            <div className="agent-dash">
+                {/* Top bar matching agent UI style */}
+                <header className="agent-topbar" style={{ padding: '15px 30px', justifyContent: 'space-between', display: 'flex', alignItems: 'center' }}>
+                    <div className="agent-greeting" style={{ margin: 0 }}>
+                        <span style={{ fontSize: '0.9rem', color: '#64748b' }}>Support — </span>
+                        <strong style={{ fontSize: '1.1rem', color: '#0f172a' }}>{user?.name?.split(' ')[0] ?? 'Agent'}</strong>
+                    </div>
+                    <div className="agent-topbar__right">
+                        <button className="shift-toggle shift-toggle--on">
+                            <span className="shift-dot" />
+                            On Duty
+                        </button>
+                    </div>
+                </header>
+
+                <main className="agent-main" style={{ alignItems: 'center' }}>
+                    <div style={{ width: '100%', maxWidth: '640px' }}>
+
+                        <div style={{ marginBottom: '28px' }}>
+                            <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#0f172a', margin: '0 0 8px' }}>
+                                💬 Agent Support
+                            </h2>
+                            <p style={{ color: '#64748b', lineHeight: '1.6', margin: 0 }}>
+                                Having a problem with a delivery or the platform? Fill in the form and our team will get back to you within 24 hours.
+                            </p>
                         </div>
-                        <p style={{ color: '#64748b', marginBottom: '28px', lineHeight: '1.6' }}>
-                            Have an issue or question? Fill in the form below and our support team will get back to you shortly.
-                        </p>
 
                         {status === 'success' ? (
-                            <div style={{ background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: '16px', padding: '40px', textAlign: 'center' }}>
+                            <div style={{ background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: '16px', padding: '48px', textAlign: 'center' }}>
                                 <div style={{ fontSize: '3rem', marginBottom: '12px' }}>✅</div>
                                 <h3 style={{ color: '#166534', margin: '0 0 8px' }}>Message Sent!</h3>
                                 <p style={{ color: '#64748b', margin: 0 }}>We've received your request and will respond within 24 hours.</p>
-                                <button onClick={() => setStatus('idle')} style={{ marginTop: '20px', padding: '10px 24px', borderRadius: '8px', border: 'none', background: '#16a34a', color: '#fff', fontWeight: 600, cursor: 'pointer' }}>
+                                <button
+                                    onClick={() => setStatus('idle')}
+                                    style={{ marginTop: '20px', padding: '10px 24px', borderRadius: '8px', border: 'none', background: '#45DB70', color: '#fff', fontWeight: 600, cursor: 'pointer' }}
+                                >
                                     Send Another
                                 </button>
                             </div>
                         ) : (
-                            <form onSubmit={handleSubmit} style={{ background: '#fff', borderRadius: '16px', boxShadow: '0 2px 12px rgba(0,0,0,0.07)', border: '1px solid #e2e8f0', padding: '32px', display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                            <form
+                                onSubmit={handleSubmit}
+                                style={{ background: '#fff', borderRadius: '16px', boxShadow: '0 2px 12px rgba(0,0,0,0.07)', border: '1px solid #e2e8f0', padding: '32px', display: 'flex', flexDirection: 'column', gap: '20px' }}
+                            >
                                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
                                     <div>
                                         <label style={{ display: 'block', fontWeight: 600, color: '#374151', marginBottom: '6px', fontSize: '0.9rem' }}>Full Name *</label>
@@ -101,14 +120,18 @@ export default function SupportPage() {
                                         Something went wrong. Please try again.
                                     </div>
                                 )}
-                                <button type="submit" disabled={status === 'sending'} style={{ padding: '13px', borderRadius: '10px', border: 'none', background: 'linear-gradient(135deg, #45DB70, #2ECC5E)', color: '#fff', fontWeight: 700, fontSize: '1rem', cursor: status === 'sending' ? 'not-allowed' : 'pointer', opacity: status === 'sending' ? 0.7 : 1 }}>
+                                <button
+                                    type="submit"
+                                    disabled={status === 'sending'}
+                                    style={{ padding: '13px', borderRadius: '10px', border: 'none', background: 'linear-gradient(135deg, #45DB70, #2ECC5E)', color: '#fff', fontWeight: 700, fontSize: '1rem', cursor: status === 'sending' ? 'not-allowed' : 'pointer', opacity: status === 'sending' ? 0.7 : 1 }}
+                                >
                                     {status === 'sending' ? '⏳ Sending...' : '📨 Send Message'}
                                 </button>
                             </form>
                         )}
-                    </section>
-                </div>
+                    </div>
+                </main>
             </div>
-        </div>
+        </>
     );
 }
