@@ -1,6 +1,6 @@
 import { useAuthStore } from '../store/authStore';
 
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+const API_BASE = import.meta.env.VITE_API_URL || 'https://dak-khana.onrender.com';
 
 /**
  * Absolute URL for a DakExport API v1 path (no leading slash required on `path`).

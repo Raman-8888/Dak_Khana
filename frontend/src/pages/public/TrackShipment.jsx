@@ -23,7 +23,8 @@ export default function TrackShipment() {
     setShipment(null);
 
     try {
-      const response = await fetch(`http://localhost:8000/api/v1/tracking/${trackingNumber}`);
+      const apiBase = import.meta.env.VITE_API_URL || 'https://dak-khana.onrender.com';
+      const response = await fetch(`${apiBase}/api/v1/tracking/${trackingNumber}`);
       const data = await response.json();
       
       if (response.ok) {

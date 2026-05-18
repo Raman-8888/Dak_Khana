@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { DEFAULT_ADMIN_WORKSPACE } from '../constants/adminWorkspaces';
 
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+const API_BASE = import.meta.env.VITE_API_URL || 'https://dak-khana.onrender.com';
 
 const ROLE_ROUTES = {
     customer:              '/customer/dashboard',
